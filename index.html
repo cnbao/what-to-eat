@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>今天吃什么？</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="app-header">今天吃什么？</header>
+
+    <main class="view-container">
+      <!-- 视图1: 老虎机 -->
+      <section id="view-slot" class="view active">
+        <div class="slot-machine">
+          <div class="slot-window">
+            <div class="slot-strip" id="slotStrip"></div>
+          </div>
+          <div class="slot-indicator"></div>
+        </div>
+        <button id="btnSpin" class="btn-spin">开选！</button>
+        <div id="resultBanner" class="result-banner hidden">
+          <span class="result-text">今天吃 <span id="resultFood"></span>！</span>
+        </div>
+        <div id="pairingArea" class="pairing-area hidden"></div>
+        <div class="achievements-preview">
+          <h3 class="achievements-title">最近成就</h3>
+          <div id="recentAchievements" class="achievements-list"></div>
+          <button id="btnUnlockAchievement" class="btn-small">解锁新成就</button>
+        </div>
+      </section>
+
+      <!-- 视图2: 偏好选择 -->
+      <section id="view-favorites" class="view">
+        <div id="favContent"></div>
+      </section>
+
+      <!-- 视图3: 统计 -->
+      <section id="view-stats" class="view">
+        <div id="statsContent"></div>
+      </section>
+
+      <!-- 视图4: AI点评 -->
+      <section id="view-ai" class="view">
+        <div class="ai-section">
+          <h3 class="ai-section-title">吃饭成就</h3>
+          <button id="btnAchievement" class="btn-primary">解锁成就</button>
+          <div id="achievementResult" class="ai-result"></div>
+        </div>
+        <div class="ai-section">
+          <h3 class="ai-section-title">热量估算+健康建议</h3>
+          <button id="btnHealth" class="btn-primary">给我建议</button>
+          <div id="healthResult" class="ai-result"></div>
+        </div>
+      </section>
+
+      <!-- 视图5: 设置 -->
+      <section id="view-settings" class="view">
+        <div id="settingsAI"></div>
+        <div id="settingsFood"></div>
+        <div id="settingsPrompts"></div>
+        <div id="settingsPrefixes"></div>
+      </section>
+    </main>
+
+    <nav class="tab-bar">
+      <button class="tab active" data-view="slot">🎰选饭</button>
+      <button class="tab" data-view="favorites">❤️偏好</button>
+      <button class="tab" data-view="stats">📊统计</button>
+      <button class="tab" data-view="ai">🤖点评</button>
+      <button class="tab" data-view="settings">⚙️设置</button>
+    </nav>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
